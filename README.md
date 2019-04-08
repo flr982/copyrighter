@@ -1,4 +1,4 @@
-Technical Assignment - REST API
+# Technical Assignment - REST API
 
 Problem:
 
@@ -33,10 +33,13 @@ We should be able to test your RESTful service with curl or Postman like tool.
 
 #############
 
-MAN:
+# MAN:
+```
 Home page: # curl http://<IP>:5000/
 List the keywords in use: # curl [-X GET] http://<IP>:5000/keywords/
 Add new keyword to Keyword.txt file: # curl -X POST http://<IP>:5000/keywords/add/<new_name>
 Remove keyword from Keyword.txt file: # curl -X POST http://<IP>:5000/keywords/remove/<name>
 Append ® to names listed in Keyword.txt file: # curl -X POST http://<IP>:5000/replace/<text>
+```
+
 
