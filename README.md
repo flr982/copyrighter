@@ -30,3 +30,13 @@ This file can be extended with more keywords in the future.
 You need to develop a RESTful service hosted on AWS or Heroku which takes a text file as input and outputs a file with ® appended to all trademarked items. You should also log how many times your service has been called.
 
 We should be able to test your RESTful service with curl or Postman like tool.
+
+#############
+
+MAN:
+Home page: # curl http://<IP>:5000/
+List the keywords in use: # curl [-X GET] http://<IP>:5000/keywords/
+Add new keyword to Keyword.txt file: # curl -X POST http://<IP>:5000/keywords/add/<new_name>
+Remove keyword from Keyword.txt file: # curl -X POST http://<IP>:5000/keywords/remove/<name>
+Append ® to names listed in Keyword.txt file: # curl -X POST http://<IP>:5000/replace/<text>
+

@@ -1,0 +1,9 @@
+Welcome to the copyrighter. This api can add the ® symbol after specific names.
+
+Usage:
+This page: # curl http://<IP>:5000/
+List the keywords in use: # curl [-X GET] http://<IP>:5000/keywords/
+Add new keyword to Keyword.txt file: # curl -X POST http://<IP>:5000/keywords/add/<new_name>
+Remove keyword from Keyword.txt file: # curl -X POST http://<IP>:5000/keywords/remove/<name>
+Append ® to names listed in Keyword.txt file: # curl -X POST http://<IP>:5000/replace/<text>
+
