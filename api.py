@@ -16,6 +16,11 @@ def get_home():
 def post(text):
     return rpl(text)
 
+@app.route('/replace/', methods=['POST'])
+def tester():
+    input_file = request.stream.read()
+    return rpl(input_file)
+
 @app.route('/keywords/', methods=['GET'])
 def get():
     return app.send_static_file("Keyword.txt")
@@ -30,5 +35,5 @@ def post_rm(name):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0')
 
