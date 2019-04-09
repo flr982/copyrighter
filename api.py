@@ -12,13 +12,9 @@ app = Flask(__name__)
 def get_home():
     return app.send_static_file("home.txt")
 
-@app.route('/replace/<text>', methods=['POST'])
-def post(text):
-    return rpl(text)
-
 @app.route('/replace/', methods=['POST'])
-def tester():
-    input_file = request.stream.read()
+def post_file():
+    input_file = request.stream.read().decode()
     return rpl(input_file)
 
 @app.route('/keywords/', methods=['GET'])
