@@ -39,7 +39,7 @@ Home page: # curl http://<IP>:5000/
 List the keywords in use: # curl [-X GET] http://<IP>:5000/keywords/
 Add new keyword to Keyword.txt file: # curl -X POST http://<IP>:5000/keywords/add/<new_name>
 Remove keyword from Keyword.txt file: # curl -X POST http://<IP>:5000/keywords/remove/<name>
-Append ® to names listed in Keyword.txt file: # curl -X POST -d @<file_name> http://192.168.0.15:5000/replace/
+Append ® to names listed in Keyword.txt file: # curl -X POST -d @<file_name> http://<IP>:5000/replace/
 sample1.txt file provided for test.
 ```
 
