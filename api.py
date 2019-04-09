@@ -1,21 +1,20 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, request, jsonify, render_template
-#from flask_restful import Resource, Api
+from flask import Flask, request, send_file
 import os
 from replacer import rpl
 from  updater import add_key, rm_key
 
 app = Flask(__name__)
-#api = Api(app)
 
 @app.route('/', methods=['GET'])
-def get_home():
+def home():
     return app.send_static_file("home.txt")
 
 @app.route('/replace/', methods=['POST'])
 def post_file():
     input_file = request.stream.read().decode()
-    return rpl(input_file)
+    rpl(input_file)
+    return send_file("output.txt", attachment_filename='modified.txt', as_attachment=True)
 
 @app.route('/keywords/', methods=['GET'])
 def get():
