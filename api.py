@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, request, send_file
-import os
+import os, flask, sys
 from replacer import rpl
-from  updater import add_key, rm_key
+from updater import add_key, rm_key
 
 app = Flask(__name__)
 
@@ -27,6 +27,11 @@ def get_add(name):
 @app.route('/keywords/remove/<name>', methods=['POST'])
 def post_rm(name):
     return rm_key(name)
+
+@app.route('/versions/', methods=['GET'])
+def flask_version():
+    return("We're running flask %s on python %s" % (flask.__version__, sys.version))
+
 
 
 if __name__ == '__main__':
